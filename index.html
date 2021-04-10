@@ -31,9 +31,34 @@
         <button class="btn">North America</button>
         <button class="btn">South America</button>
     </nav>
+    <div>
+        <form class=search-bar>
+            <input type="text" list="search-history" id="search-city" class="form-control" placeholder="Search Country">
+            <datalist id = "search-history"></datalist>
+            <button id="search-btn" class="btn btn-primary"type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </div>
+    <div id = "country-content">
+        <div class="row" id="country-header">
+            <h2></h2>
+            <img src="">
+        </div>
+        <div class="row" id="country-data">
+            
+        </div>
 
     </div>
-
+    <div id="news-content" class="hidden">
+        <div>
+            <h2>Latest News:</h2>
+        </div>
+        <div class="row">
+            <div class="news-display"></div>
+        </div>
+        
+    </div>
+    
+    
     <div  class="container hidden" id="nav-page-container">
         
         <div class="row" id = "world-covid-data">
@@ -54,7 +79,7 @@
                 <span id="new-count"></span>
             </div>
             <div class="col-sm box">
-                <h2>Critical</h2>
+                <h2>Critical Cases</h2>
                 <span id="critical-count"></span>
             </div>
             <div class="col-sm box">
