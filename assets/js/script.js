@@ -50,6 +50,7 @@ $("#search-btn").click(function(){
         }
     
     }
+    $("#search-city").val("");
     console.log("threeLetterCode",threeLetterCode);
     //$("#news-content").removeClass("hidden");
     countryCovidApiCall(countryName,threeLetterCode);

@@ -8,7 +8,7 @@ header {
 }
 
 .hidden{
-    visibility: hidden;
+    display:none;
 }
 
 .news{
