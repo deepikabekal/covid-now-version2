@@ -15,17 +15,65 @@ header div {
     align-items: flex-end;
 }
 
+main {
+    position: relative;
+    min-height: 100vh;
+}
+
+
 .region {
     justify-content: center;
     display: flex;
     font-size: 100px;
+    font-family: 'Fraunces', serif;
+
+}
+
+.btn:hover{
+    background-color:rgba(207, 207, 207, 0.637) ;
+}
+
+
+
+#country-content h3, span{
+    padding-left: 35px;
+    margin: 15px;
+    
+}
+
+#country-name {
+    font-size: 2.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100%;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+    padding-bottom: 20px;
+  } 
+
+#news-content {
+    margin-top: 40px;
+}
+
+#news-content h2 {
+    display: inline-flex;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100%;
+    padding: 20px;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+    background-color: #297fb99d;
+    margin-bottom: 0px;
 }
 
 .page-title{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 50px;
+    padding: 20px;
     font-family: 'Fraunces', serif;
     font-size: 50px;
 }
@@ -34,6 +82,7 @@ header div {
     justify-content: center;
     padding: 15px;
     margin: 10px;
+    padding-bottom: 50px;
 }
 
 .hidden{
@@ -47,8 +96,11 @@ header div {
 .news-display{
     width: 100%;
     display: flex;
-    justify-content:space-evenly ;
+    justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    background-color:rgba(207, 207, 207, 0.637);
 }
 
 .news p{
@@ -60,12 +112,20 @@ header div {
     width : 200px;
     height: 200px;
     border-radius: 5px;
+    border: 2px solid rgba(114, 111, 111, 0.904);
+}
+
+
+.news {
+    align-items: center;
+    text-align: center;
 }
 
 .form-control {
     background-color: rgba(207, 207, 207, 0.637);
     padding: 25px;
     border-radius: 20px;
+    align-items: center;
 }
 
 
@@ -91,13 +151,9 @@ position: relative;
 min-height: 100vh;
 }
 
-/* .xyz {
-margin-left: 10px;
-margin-right: 10px;
-display: flex;
-justify-content: center;
-
-} */
+#nav-page-container {
+    padding-bottom: 50px;
+}
 
 .left-div {
     padding: 10px;
@@ -128,6 +184,7 @@ footer {
     display: flex;
     justify-content: space-between;
     color: white;
+    position: absolute;
 }
 
 
@@ -136,3 +193,9 @@ footer {
        text-align: center;
    }
 }
+
+/* @media only screen and (max-width: 715px) {
+    .region { 
+         ;
+     }
+  } */
