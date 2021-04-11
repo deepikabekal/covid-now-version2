@@ -6,6 +6,7 @@ var apiUrl = `https://covid-19-news.p.rapidapi.com/v1/covid?`;//covid news API U
 //var threeLetterCode = "";
 var searchHistory = [];
 var countryCodeList = [];
+var formSubmit = document.querySelector (".search-bar");
 
 //get the country code list on page load.
 fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries-name-ordered",
@@ -31,7 +32,10 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
                             //beginning of code for event listeners
 
 //event listener for search button
-$("#search-btn").click(function(event){
+// $("#search-btn").submit(function(event){
+    function formSearch(event){
+        
+    
     //$("#nav-page-container").empty();
     $("#main-page-content").removeClass("hidden");
     $("#nav-page-container").attr("class","hidden");
@@ -55,7 +59,7 @@ $("#search-btn").click(function(event){
     console.log("threeLetterCode",threeLetterCode);
     //$("#news-content").removeClass("hidden");
     countryCovidApiCall(countryName,threeLetterCode);
-})
+}
 
 
 
@@ -350,5 +354,8 @@ function displaySearchHistory(){
         $("#search-history").append(optionTag);
     } 
 }
+
+formSubmit.addEventListener("submit", formSearch);
+
 
                             //end of code for search history
