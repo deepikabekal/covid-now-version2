@@ -6,6 +6,11 @@ var apiUrl = `https://covid-19-news.p.rapidapi.com/v1/covid?`;//covid news API U
 //var threeLetterCode = "";
 var searchHistory = [];
 var countryCodeList = [];
+var formSubmit = document.querySelector (".search-bar");
+
+$(window).on("load",function(){
+    displaySearchHistory();
+    });
 
 //get the country code list on page load.
 fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/npm-covid-data/countries-name-ordered",
@@ -31,8 +36,10 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
                             //beginning of code for event listeners
 
 //event listener for search button
-
-$("#search-btn").click(function(){
+// $("#search-btn").submit(function(event){
+    function formSearch(event){
+        
+    
     //$("#nav-page-container").empty();
     $("#main-page-content").removeClass("hidden");
     $("#nav-page-container").attr("class","hidden");
@@ -40,7 +47,10 @@ $("#search-btn").click(function(){
     console.log(countryCodeList);
     var countryName = $("#search-city").val().trim();
     countryName = countryName[0].toUpperCase() + countryName.slice(1,countryName.length).toLowerCase();
+    saveSearchHistory(countryName);
+    $("#country-name").text(countryName);
     var threeLetterCode = "";
+    event.preventDefault();
     //debugger;
     for (var i=0; i<countryCodeList.length; i++){
         
@@ -55,8 +65,7 @@ $("#search-btn").click(function(){
     console.log("threeLetterCode",threeLetterCode);
     //$("#news-content").removeClass("hidden");
     countryCovidApiCall(countryName,threeLetterCode);
-    saveSearchHistory(countryName);
-})
+}
 
 
 
@@ -194,19 +203,37 @@ function countryCovidApiCall(countryName, threeLetterCode){
     })
     .then( data => {
         console.log("country data", data);
-        getCountrydata(data);
+        getCovidCountry(data);
     })
     .catch(err => {
 	    console.error(err);
     });
     
-
 }
 
-function getCountrydata(info){
-    var countryCode = info[0].TwoLetterSymbol;
-    makeApiCall(countryCode);
-}
+function getCovidCountry(data) {
+    var actCase = data[0].ActiveCases;
+    console.log(actCase);
+    var testPer = data[0].Test_Percentage;
+    var recPro = data[0].Recovery_Proporation;
+    var recCase = data[0].TotalRecovered; 
+    var totDeath = data[0].TotalDeaths;
+    var infectionRisk = data[0].Infection_Risk;
+ 
+     
+ $("#active-case").text(actCase);
+ $("#test-percentage").text(`${testPer}%`);
+ $("#recovery-pro").text(`${recPro}%`);
+ $("#tot-recov").text(recCase);
+ $("#death-total").text(totDeath);
+ $("#infection-risk").text(`${infectionRisk}%`);
+ 
+ var countryCode = data[0].TwoLetterSymbol;
+     makeApiCall(countryCode);
+
+}    
+
+
 
 //country-wise news api starts here
 //function to make an API call to get the data 
@@ -350,5 +377,8 @@ function displaySearchHistory(){
         $("#search-history").append(optionTag);
     } 
 }
+
+formSubmit.addEventListener("submit", formSearch);
+
 
                             //end of code for search history
