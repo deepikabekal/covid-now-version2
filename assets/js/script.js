@@ -31,7 +31,7 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
                             //beginning of code for event listeners
 
 //event listener for search button
-$("#search-btn").click(function(){
+$("#search-btn").click(function(event){
     //$("#nav-page-container").empty();
     $("#main-page-content").removeClass("hidden");
     $("#nav-page-container").attr("class","hidden");
@@ -40,6 +40,7 @@ $("#search-btn").click(function(){
     var countryName = $("#search-city").val().trim();
     countryName = countryName[0].toUpperCase() + countryName.slice(1,countryName.length).toLowerCase();
     var threeLetterCode = "";
+    event.preventDefault();
     //debugger;
     for (var i=0; i<countryCodeList.length; i++){
         
