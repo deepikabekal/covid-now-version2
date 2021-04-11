@@ -32,7 +32,10 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
 
 //event listener for search button
 $("#search-btn").click(function(){
-    $("#news-display").empty();
+    //$("#nav-page-container").empty();
+    $("#main-page-content").removeClass("hidden");
+    $("#nav-page-container").attr("class","hidden");
+    $(".news-display").empty();
     console.log(countryCodeList);
     var countryName = $("#search-city").val().trim();
     countryName = countryName[0].toUpperCase() + countryName.slice(1,countryName.length).toLowerCase();
@@ -48,23 +51,23 @@ $("#search-btn").click(function(){
     
     }
     console.log("threeLetterCode",threeLetterCode);
-    $("#news-content").removeClass("hidden");
+    //$("#news-content").removeClass("hidden");
     countryCovidApiCall(countryName,threeLetterCode);
 })
 
 
 
 $("nav").on("click", "button", function(){
+    //$("#main-page-content").empty();
+    $("#main-page-content").addClass("hidden");
+    $("#nav-page-container").removeClass("hidden");
     var btnText = $(this).text();
     if (btnText==="World"){
         covidApiCall(btnText);
         worldNewsApiCall();
     } else {
         covidApiCall(btnText);
-    }
-    
-    $("#nav-page-container").removeClass("hidden");
-    
+    }   
     
 })
                         //end of code for event listener 
@@ -122,7 +125,6 @@ function getCovidData(data){
     console.log("covid array", covidDataArray);
     covidDataArray = numberFormat(covidDataArray);  
     displayCovidData(covidDataArray);
-
 }
 
 //function to format the numbers
@@ -136,13 +138,13 @@ function numberFormat(covidDataArray){
 }
 
 function displayCovidData(covidDataArray){
-    $("#total-count").text(covidDataArray[0].toLocaleString());
+    $("#total-count").text(covidDataArray[0]);
     console.log(covidDataArray[0]);
-    $("#active-count").text(covidDataArray[1].toLocaleString());
-    $("#death-count").text(covidDataArray[2].toLocaleString());
-    $("#new-count").text(covidDataArray[3].toLocaleString());
-    $("#critical-count").text(covidDataArray[4].toLocaleString());
-    $("#new-death-count").text(covidDataArray[5].toLocaleString());
+    $("#active-count").text(covidDataArray[1]);
+    $("#death-count").text(covidDataArray[2]);
+    $("#new-count").text(covidDataArray[3]);
+    $("#critical-count").text(covidDataArray[4]);
+    $("#new-death-count").text(covidDataArray[5]);
 
 }
 
@@ -238,6 +240,7 @@ function makeApiCall(countryCode){
 // makeApiCall(countryCode);
 
 function getInformation(info){
+    
     var newsInformation = [];
     for (var i = 0; i < info.articles.length; i++){
         var newsData = {
@@ -310,7 +313,7 @@ function covidNewsDisplay(newsInformation){
 
 //button.addEventListener("click", countrySearch);
 
-function saveSearchHistory(countryName,covidObject){
+function saveSearchHistory(covidDataArray){
     searchHistory = JSON.parse(localStorage.getItem("covidNow")) || [];
     console.log(searchHistory);
 
