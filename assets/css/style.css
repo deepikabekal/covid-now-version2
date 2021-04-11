@@ -91,13 +91,13 @@ position: relative;
 min-height: 100vh;
 }
 
-.row {
+/* .xyz {
 margin-left: 10px;
 margin-right: 10px;
 display: flex;
 justify-content: center;
 
-}
+} */
 
 .left-div {
     padding: 10px;

@@ -29,15 +29,15 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
     countryCodeList = data;
     console.log("country data", data);
 })
-.catch(err => {
-	console.error(err);
-});
+// .catch(err => {
+// 	console.error(err);
+// });
 
                             //beginning of code for event listeners
 
 //event listener for search button
-// $("#search-btn").submit(function(event){
-    function formSearch(event){
+//$("#search-btn").submit(function(event){
+     function formSearch(event){
         
     
     //$("#nav-page-container").empty();
@@ -111,9 +111,9 @@ function covidApiCall(btnText){
         console.log("data = ", data);
         getCovidData(data);
     })
-    .catch(err => {
-	    console.error(err);
-     });
+    // .catch(err => {
+	//     console.error(err);
+    //  });
 }
 
 
@@ -175,9 +175,9 @@ function worldNewsApiCall(){
     console.log("world-news",data);
     displayWorldNews(data);
 })
-.catch(err => {
-	console.error(err);
-});
+// .catch(err => {
+// 	console.error(err);
+// });
 }
 
                             //end of code for navigation buttons
@@ -347,16 +347,18 @@ function saveSearchHistory(countryName){
     searchHistory = JSON.parse(localStorage.getItem("covidNow")) || [];
     console.log(searchHistory);
 
+    var searchObject  = {country:countryName};
+    console.log("searchobject", searchObject);
     
     if (searchHistory!==[]){
         for (var i=0; i<searchHistory.length;i++){
-            if(countryName.toLowerCase()===searchHistory[i].toLowerCase()){
+            if(countryName.toLowerCase()===searchHistory[i].country.toLowerCase()){
                 searchHistory.splice(i,1);
             }
         }
     }
 
-    searchHistory.push(countryName);
+    searchHistory.push(searchObject);
     console.log("last search History", searchHistory);
 
     localStorage.setItem("covidNow",JSON.stringify(searchHistory));
@@ -367,12 +369,12 @@ function saveSearchHistory(countryName){
 
 function displaySearchHistory(){
     $("#search-history").empty();
-    $("#search-city").val("");
+    //$("#search-city").val("");
     var searchHistory = JSON.parse(localStorage.getItem("covidNow")) || [];
     console.log(searchHistory.length);
     for (var i=0; i<searchHistory.length; i++){
         var optionTag = $("<option></option>");
-        optionTag.text(searchHistory[i]);
+        optionTag.text(searchHistory[i].country);
         //console.log(optionTag);
         $("#search-history").append(optionTag);
     } 
