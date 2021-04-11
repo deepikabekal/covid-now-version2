@@ -1,10 +1,24 @@
 header {
-    background: #0EB1D2;
-    font-size: 3rem;
+    background: #2980b9;
+    font-size: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between ;
     padding: 20px;
     color: white;
+    font-weight: bolder;
+}
+
+header div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: right;
+    align-items: flex-end;
+}
+
+.region {
+    justify-content: center;
+    display: flex;
+    font-size: 100px;
 }
 
 .hidden{
@@ -21,12 +35,78 @@ header {
     justify-content:space-evenly ;
     flex-wrap: wrap;
 }
+
 .news p{
     word-wrap: break-word;
 }
+
 .news img{
     width : 200px;
     height: 200px;
+}
+
+.form-control {
+    background-color: rgba(207, 207, 207, 0.637);
+    padding: 25px;
+    border-radius: 20px;
+}
+
+
+.news-links div {
+    border: 2px solid grey;
+    border-radius: 2px;
+    text-align: right;
+    width: 580px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+ }
+
+.news-links div a {
+    width: 200px;
+ }
+.news-display h2 {
+     border: black;
+     border-radius: 20px;
+ }
+
+#page-container{
+position: relative;
+min-height: 100vh;
+}
+
+.row {
+margin-left: 10px;
+margin-right: 10px;
+display: flex;
+justify-content: center;
+
+}
+
+.left-div {
+    padding: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.836);
+    border-radius: 20px;
+    font-family: 'Fraunces', serif;
+
+}
+
+.covid-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-wrap{
+    padding-bottom: 2.5rem;
+}
+
+.page-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    font-family: 'Fraunces', serif;
+    font-size: 50px;
 }
 .search-bar{
     display: flex;
@@ -35,3 +115,21 @@ header {
     margin: 10px;
 }
 
+footer {
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    background: #2980b9;
+    font-size: 0.5 rem;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+
+
+@media only screen and (max-width: 715px) {
+  .page-title { 
+       text-align: center;
+   }
+}
