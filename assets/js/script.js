@@ -31,6 +31,7 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
                             //beginning of code for event listeners
 
 //event listener for search button
+
 $("#search-btn").click(function(){
     //$("#nav-page-container").empty();
     $("#main-page-content").removeClass("hidden");
@@ -54,6 +55,7 @@ $("#search-btn").click(function(){
     console.log("threeLetterCode",threeLetterCode);
     //$("#news-content").removeClass("hidden");
     countryCovidApiCall(countryName,threeLetterCode);
+    saveSearchHistory(countryName);
 })
 
 
@@ -314,21 +316,20 @@ function covidNewsDisplay(newsInformation){
 
 //button.addEventListener("click", countrySearch);
 
-function saveSearchHistory(covidDataArray){
+function saveSearchHistory(countryName){
     searchHistory = JSON.parse(localStorage.getItem("covidNow")) || [];
     console.log(searchHistory);
 
     
     if (searchHistory!==[]){
         for (var i=0; i<searchHistory.length;i++){
-            if(countryName.toLowerCase()===searchHistory[i].country.toLowerCase()){
+            if(countryName.toLowerCase()===searchHistory[i].toLowerCase()){
                 searchHistory.splice(i,1);
             }
         }
     }
 
-    searchHistory.push(covidObject);
-    console.log("coid object", covidObject);
+    searchHistory.push(countryName);
     console.log("last search History", searchHistory);
 
     localStorage.setItem("covidNow",JSON.stringify(searchHistory));
@@ -344,7 +345,7 @@ function displaySearchHistory(){
     console.log(searchHistory.length);
     for (var i=0; i<searchHistory.length; i++){
         var optionTag = $("<option></option>");
-        optionTag.text(searchHistory[i].country);
+        optionTag.text(searchHistory[i]);
         //console.log(optionTag);
         $("#search-history").append(optionTag);
     } 
