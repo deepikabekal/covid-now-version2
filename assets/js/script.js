@@ -181,7 +181,20 @@ function worldNewsApiCall(){
 }
 
 function displayWorldNews(data){
-    
+       
+    for(var i=0; i<3; i++){
+        var divTag = $("<div></div>");
+        divTag.attr("class", "world-news-1 col-sm-3");
+        var pTag = $("<p></p>");
+        var imgTag = $("<img>").attr("src", data.news[i].urlToImage);
+        var aTag = $("<a></a>").attr("href",data.news[i].link);
+        aTag.attr("target", "_blank");
+        aTag.text(data.news[i].title);
+        $("#world-news").append(divTag);
+        $(divTag).append(imgTag);
+        $(divTag).append(pTag);
+        $(pTag).after(aTag);
+    }
 
 }
 
