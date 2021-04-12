@@ -2,6 +2,10 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+* NOTE: This is our final project submission.
+* NOTE:  Due to technical difficulties,  this repo was created and used.
+* NOTE:  All work leading up to our MVP can be found here at this repo (https://github.com/deepikabekal/Covid-Now)
+
 ## Description
 Covid-Now is an application that provides Covid-19 information and latest Covid-19 news for the country that the user will enter in the Search box.
 
