@@ -44,7 +44,10 @@ THEN I AM again presented with the confirmed and recovered covid case count as w
 ```
 ## Future Development
 ```
-
+* The search bar will be able to detect and populate the date for different lettered casing for the country name entered.
+* Integrate a heat map lalong with the Covid-19 data to visually display Covid hotspot regions.
+* Bootstrap elements will be implented to keep main css stylesheet clean.
+* Display Covid-19 vaccine data. 
 ```
 
 ## References
