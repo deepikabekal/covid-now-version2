@@ -195,7 +195,7 @@ min-height: 100vh;
 }
 
 #world-news {
-    background-color: rgba(207, 207, 207, 0.637);
+    /* background-color: rgba(207, 207, 207, 0.637); */
     padding: 40px;
 }
 

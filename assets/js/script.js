@@ -83,9 +83,12 @@ $("nav").on("click", "button", function(){
     $("#nav-page-container").removeClass("hidden");
     var btnText = $(this).text();
     if (btnText==="World"){
+        $("#world-news").removeClass("hidden");
         covidApiCall(btnText);
         worldNewsApiCall();
     } else {
+        $("#world-news").empty();
+        $("#world-news").addClass("hidden");
         covidApiCall(btnText);
     }   
     
