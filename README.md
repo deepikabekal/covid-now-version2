@@ -9,7 +9,7 @@ Covid-Now is an application that provides Covid-19 information and latest Covid-
  https://deepikabekal.github.io/Covid-Now/
 
 ## Screenshot
-<img src="assets/images/screenshot.jpg" width=150 height = 150>
+<img src="assets/images/screenshot.jpg" width=800px height = 800px>
 
 ## Technologies Used
 * HTML
