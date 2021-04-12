@@ -60,9 +60,10 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
     if (!found)
     {
         $("#search-city").val("");
+        $("#incorrect-country").html("");
         displayErrorMsg(countryName);
     } else {
-
+        $("#incorrect-country").html("");
         saveSearchHistory(countryName);
         $("#country-name").text(countryName);
         
@@ -406,6 +407,7 @@ function displaySearchHistory(){
 }
 
 function displayErrorMsg(countryName){
+    
     console.log(countryName);
     $("#main-page-content").addClass("hidden");
     var errorMsg = `${countryName} is not a valid country. Please enter correct Country Name`;
