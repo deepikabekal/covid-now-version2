@@ -75,6 +75,15 @@ main {
 
 /* Hero/CTA Styling Ends */
 
+#incorrect-country{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: red;
+    font-size: 1rem;
+}
+
 /* Country Search Data Styling Begins */
 
 #country-content h3, span{
