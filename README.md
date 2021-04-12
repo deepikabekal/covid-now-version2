@@ -9,7 +9,7 @@ Covid-Now is an application that provides Covid-19 information and latest Covid-
  https://deepikabekal.github.io/Covid-Now/
 
 ## Screenshot
-<img src="assets/images/screenshot.gif" width=150 height = 150>
+<img src="assets/images/screenshot.jpg" width=150 height = 150>
 
 ## Technologies Used
 * HTML
@@ -27,6 +27,19 @@ Covid-Now is an application that provides Covid-19 information and latest Covid-
 
 ## User Story
 ```
+AS A consumer of news
+I WANT A condensed report of the country of interest 
+SO THAT I am informed of the global situation of the pandemic
+```
+## Acceptence Criteria
+```
+GIVEN A Covid-19 Dashboard with country search call to action
+WHEN I search for a country
+THEN I AM presented with the confirmed and recovered covid case count as well as covid related deaths for that region with the latest news reports
+WHEN I click on the dropdown arrow in the search bar
+THEN I AM presented with the country search history
+WHEN I click on a country from the search history
+THEN I AM again presented with the confirmed and recovered covid case count as well as covid related deaths for that region with the latest news reports
 ```
 
 ## References

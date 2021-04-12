@@ -189,7 +189,7 @@ function worldNewsApiCall(){
 }
 
 function displayWorldNews(data){
-       
+    $("#world-news").empty();
     for(var i=0; i<3; i++){
         var divTag = $("<div></div>");
         divTag.attr("class", "world-news-1 col-sm-3");
@@ -280,15 +280,15 @@ function makeApiCall(countryCode){
         getInformation(data); 
     })
     .catch(function(error){
-        console.log("error",error);
-        var errorMsg = "Sorry! There is no COVID-19 news related to this country."
-        var divTag = $("<div></div>");
-        divTag.attr("id", "error-div");
-        var headingEl = $("<h2></h2>").text("Latest News");
-        var errorPTag = $("<p></p>").text(errorMsg);
-        $(".news-display").append(divTag);
-        $(divTag).append(headingEl);
-        $(divTag).append(errorPTag);
+        // console.log("error",error);
+        // var errorMsg = "Sorry! There is no COVID-19 news related to this country."
+        // var divTag = $("<div></div>");
+        // divTag.attr("id", "error-div");
+        // var headingEl = $("<h2></h2>").text("Latest News");
+        // var errorPTag = $("<p></p>").text(errorMsg);
+        // $(".news-display").append(divTag);
+        // $(divTag).append(headingEl);
+        // $(divTag).append(errorPTag);
 
     })
 }
