@@ -20,6 +20,18 @@ main {
     min-height: 100vh;
 }
 
+.hidden{
+    display:none;
+}
+
+/* Header Styling */
+
+.covid-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Hero/CTA Styling Begins */
 
 .region {
@@ -63,11 +75,11 @@ main {
 
 /* Hero/CTA Styling Ends */
 
+/* Country Search Data Styling Begins */
 
 #country-content h3, span{
     padding-left: 35px;
     margin: 15px;
-    
 }
 
 #country-name {
@@ -81,6 +93,10 @@ main {
     padding-bottom: 20px;
   } 
 
+  /* Country Search Data Styling Ends */
+
+  /* LATEST NEWS Styling Begins */
+  
 #news-content {
     margin-top: 40px;
 }
@@ -95,14 +111,6 @@ main {
     font-family: 'Fraunces', serif;
     background-color: #297fb99d;
     margin-bottom: 0px;
-}
-
-.hidden{
-    display:none;
-}
-
-.news{
-    margin: 10px;
 }
 
 .news-display{
@@ -130,8 +138,8 @@ main {
 .news {
     align-items: center;
     text-align: center;
+    margin: 10px;
 }
-
 
 .news-links div {
     border: 2px solid grey;
@@ -145,10 +153,15 @@ main {
 .news-links div a {
     width: 200px;
  }
+
 .news-display h2 {
      border: black;
      border-radius: 20px;
  }
+
+ /* LATEST NEWS Styling Ends */
+
+ /* Region News Data Styling Begins */
 
 #page-container{
 position: relative;
@@ -159,15 +172,12 @@ min-height: 100vh;
     padding-bottom: 50px;
 }
 
-.covid-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #content-wrap{
     padding-bottom: 2.5rem;
 }
+
+ /* Region News Data Styling Ends */
+
 
 /* Footer Styling Begins*/
 
