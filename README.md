@@ -6,7 +6,7 @@
 Covid-Now is an application that provides Covid-19 information and latest Covid-19 news for the country that the user will enter in the Search box.
 
 ## Website
- https://deepikabekal.github.io/Covid-Now/
+ https://deepikabekal.github.io/covid-now-version2/
 
 ## Screenshot
 <img src="assets/images/screenshot.jpg" width=800px height = 800px>
@@ -22,8 +22,9 @@ Covid-Now is an application that provides Covid-19 information and latest Covid-
 * Google fonts (https://developers.google.com/fonts)
 
 ## APIs
-* https://mediastack.com/
-* 
+* VACCOVID (https://rapidapi.com/vaccovidlive-vaccovidlive-default/api/vaccovid-coronavirus-vaccine-and-treatment-tracker/details)
+* COVID-19 News (https://rapidapi.com/kotartemiy/api/covid-19-news)
+
 
 ## User Story
 ```
@@ -41,8 +42,19 @@ THEN I AM presented with the country search history
 WHEN I click on a country from the search history
 THEN I AM again presented with the confirmed and recovered covid case count as well as covid related deaths for that region with the latest news reports
 ```
+## Future Development
+```
+
+```
 
 ## References
+* VACCOVID documentation
+* COVID-19 News documentation
+* Enabling Mixed Content - https://experienceleague.adobe.com/docs/?lang=en
+* Three ways to fix CORS error - https://medium.com/@dtkatz
+* To find alternate for mediastack api which was our initial api - https://geekflare.com/global-news-api/
 * jQuery Documentation (https://api.jquery.com/)
 * Stack overflow (https://stackoverflow.com/)
 * MDN Web Docs (https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+
+
