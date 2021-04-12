@@ -15,40 +15,112 @@ header div {
     align-items: flex-end;
 }
 
-.region {
-    justify-content: center;
-    display: flex;
-    font-size: 100px;
-}
-
-.page-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-    font-family: 'Fraunces', serif;
-    font-size: 50px;
-}
-.search-bar{
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    margin: 10px;
+main {
+    position: relative;
+    min-height: 100vh;
 }
 
 .hidden{
     display:none;
 }
 
-.news{
+/* Header Styling */
+
+.covid-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero/CTA Styling Begins */
+
+.region {
+    justify-content: center;
+    display: flex;
+    font-size: 100px;
+    font-family: 'Fraunces', serif;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+.btn:hover{
+    background-color:rgba(207, 207, 207, 0.637) ;
+}
+
+.page-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'Fraunces', serif;
+    font-size: 50px;
+}
+
+.form-control {
+    background-color: rgba(207, 207, 207, 0.637);
+    padding: 25px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
     margin: 10px;
+    padding-bottom: 50px;
+}
+
+/* Hero/CTA Styling Ends */
+
+/* Country Search Data Styling Begins */
+
+#country-content h3, span{
+    padding-left: 35px;
+    margin: 15px;
+}
+
+#country-name {
+    font-size: 2.5rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100%;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+    padding-bottom: 20px;
+  } 
+
+  /* Country Search Data Styling Ends */
+
+  /* LATEST NEWS Styling Begins */
+  
+#news-content {
+    margin-top: 40px;
+}
+
+#news-content h2 {
+    display: inline-flex;
+    justify-content: center;
+    align-items:flex-start;
+    width: 100%;
+    padding: 20px;
+    font-weight: bold;
+    font-family: 'Fraunces', serif;
+    background-color: #297fb99d;
+    margin-bottom: 0px;
 }
 
 .news-display{
     width: 100%;
     display: flex;
-    justify-content:space-evenly ;
+    justify-content: space-around;
     flex-wrap: wrap;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    background-color:rgba(207, 207, 207, 0.637);
 }
 
 .news p{
@@ -60,14 +132,14 @@ header div {
     width : 200px;
     height: 200px;
     border-radius: 5px;
+    border: 2px solid rgba(114, 111, 111, 0.904);
 }
 
-.form-control {
-    background-color: rgba(207, 207, 207, 0.637);
-    padding: 25px;
-    border-radius: 20px;
+.news {
+    align-items: center;
+    text-align: center;
+    margin: 10px;
 }
-
 
 .news-links div {
     border: 2px solid grey;
@@ -81,42 +153,33 @@ header div {
 .news-links div a {
     width: 200px;
  }
+
 .news-display h2 {
      border: black;
      border-radius: 20px;
  }
+
+ /* LATEST NEWS Styling Ends */
+
+ /* Region News Data Styling Begins */
 
 #page-container{
 position: relative;
 min-height: 100vh;
 }
 
-/* .xyz {
-margin-left: 10px;
-margin-right: 10px;
-display: flex;
-justify-content: center;
-
-} */
-
-.left-div {
-    padding: 10px;
-    border: 1px solid rgba(128, 128, 128, 0.836);
-    border-radius: 20px;
-    font-family: 'Fraunces', serif;
-
-}
-
-.covid-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#nav-page-container {
+    padding-bottom: 50px;
 }
 
 #content-wrap{
     padding-bottom: 2.5rem;
 }
 
+ /* Region News Data Styling Ends */
+
+
+/* Footer Styling Begins*/
 
 footer {
     bottom: 0;
@@ -128,11 +191,36 @@ footer {
     display: flex;
     justify-content: space-between;
     color: white;
+    position: absolute;
 }
 
+
+
+/* Media Queries */
+
+@media only screen and (max-width: 715px) {
+    body { 
+        width: 100%;
+        
+     }
+  }
 
 @media only screen and (max-width: 715px) {
   .page-title { 
        text-align: center;
    }
 }
+
+@media only screen and (max-width: 1200px) {
+    #main-page-content { 
+        text-align: center;
+     }
+  }
+
+@media only screen and (max-width: 715px) {
+    #world-covid-data {
+        text-align: center;
+     }
+  }
+
+

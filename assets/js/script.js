@@ -180,6 +180,11 @@ function worldNewsApiCall(){
 // });
 }
 
+function displayWorldNews(data){
+    
+
+}
+
                             //end of code for navigation buttons
 
 
@@ -307,7 +312,7 @@ function covidNewsDisplay(newsInformation){
     if (newsInformation.length<10){
         var count = newsInformation.length;
     } else {
-        var count = 10;
+        var count = 9;
     }
     for(var i=0;i<count ;i++){
         var divTag = $("<div></div>");
