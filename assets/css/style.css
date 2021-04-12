@@ -20,12 +20,15 @@ main {
     min-height: 100vh;
 }
 
+/* Hero/CTA Styling Begins */
 
 .region {
     justify-content: center;
     display: flex;
     font-size: 100px;
     font-family: 'Fraunces', serif;
+    width: 100%;
+    flex-wrap: wrap;
 
 }
 
@@ -33,6 +36,32 @@ main {
     background-color:rgba(207, 207, 207, 0.637) ;
 }
 
+.page-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    padding: 20px;
+    font-family: 'Fraunces', serif;
+    font-size: 50px;
+}
+
+.form-control {
+    background-color: rgba(207, 207, 207, 0.637);
+    padding: 25px;
+    border-radius: 20px;
+    align-items: center;
+}
+
+.search-bar{
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    margin: 10px;
+    padding-bottom: 50px;
+}
+
+/* Hero/CTA Styling Ends */
 
 
 #country-content h3, span{
@@ -68,23 +97,6 @@ main {
     margin-bottom: 0px;
 }
 
-.page-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    padding: 20px;
-    font-family: 'Fraunces', serif;
-    font-size: 50px;
-}
-.search-bar{
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    margin: 10px;
-    padding-bottom: 50px;
-}
-
 .hidden{
     display:none;
 }
@@ -115,17 +127,9 @@ main {
     border: 2px solid rgba(114, 111, 111, 0.904);
 }
 
-
 .news {
     align-items: center;
     text-align: center;
-}
-
-.form-control {
-    background-color: rgba(207, 207, 207, 0.637);
-    padding: 25px;
-    border-radius: 20px;
-    align-items: center;
 }
 
 
@@ -155,14 +159,6 @@ min-height: 100vh;
     padding-bottom: 50px;
 }
 
-.left-div {
-    padding: 10px;
-    border: 1px solid rgba(128, 128, 128, 0.836);
-    border-radius: 20px;
-    font-family: 'Fraunces', serif;
-
-}
-
 .covid-title {
     display: flex;
     justify-content: center;
@@ -173,6 +169,7 @@ min-height: 100vh;
     padding-bottom: 2.5rem;
 }
 
+/* Footer Styling Begins*/
 
 footer {
     bottom: 0;
@@ -188,14 +185,32 @@ footer {
 }
 
 
+
+/* Media Queries */
+
+@media only screen and (max-width: 715px) {
+    body { 
+        width: 100%;
+        
+     }
+  }
+
 @media only screen and (max-width: 715px) {
   .page-title { 
        text-align: center;
    }
 }
 
-/* @media only screen and (max-width: 715px) {
-    .region { 
-         ;
+@media only screen and (max-width: 1200px) {
+    #main-page-content { 
+        text-align: center;
      }
-  } */
+  }
+
+@media only screen and (max-width: 715px) {
+    #world-covid-data {
+        text-align: center;
+     }
+  }
+
+
