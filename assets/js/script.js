@@ -38,8 +38,9 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
 //event listener for search button
 //$("#search-btn").submit(function(event){
      function formSearch(event){
-        
-    
+        var threeLetterCode = "";
+        event.preventDefault();
+        var found = false;
     //$("#nav-page-container").empty();
     $("#main-page-content").removeClass("hidden");
     $("#nav-page-container").attr("class","hidden");
@@ -47,24 +48,30 @@ fetch("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com
     console.log(countryCodeList);
     var countryName = $("#search-city").val().trim();
     countryName = countryName[0].toUpperCase() + countryName.slice(1,countryName.length).toLowerCase();
-    saveSearchHistory(countryName);
-    $("#country-name").text(countryName);
-    var threeLetterCode = "";
-    event.preventDefault();
-    //debugger;
-    for (var i=0; i<countryCodeList.length; i++){
-        
-        if(countryCodeList[i].Country===countryName){
+
+    for (var i=0;i<countryCodeList.length; i++){
+        if (countryName===countryCodeList[i].Country){
             threeLetterCode = countryCodeList[i].ThreeLetterSymbol;
-            console.log("threeLetterCode",threeLetterCode);
+                console.log("threeLetterCode",threeLetterCode);
+                found = true;
             break;
         }
-    
     }
-    $("#search-city").val("");
-    console.log("threeLetterCode",threeLetterCode);
-    //$("#news-content").removeClass("hidden");
-    countryCovidApiCall(countryName,threeLetterCode);
+    if (!found)
+    {
+        $("#search-city").val("");
+        displayErrorMsg(countryName);
+    } else {
+
+        saveSearchHistory(countryName);
+        $("#country-name").text(countryName);
+        
+        $("#search-city").val("");
+        console.log("threeLetterCode",threeLetterCode);
+        //$("#news-content").removeClass("hidden");
+        countryCovidApiCall(countryName,threeLetterCode);
+    }
+    
 }
 
 
@@ -224,7 +231,7 @@ function countryCovidApiCall(countryName, threeLetterCode){
         getCovidCountry(data);
     })
     .catch(err => {
-	    console.error(err);
+	    displayErrorMsg(countryName);
     });
     
 }
@@ -396,6 +403,16 @@ function displaySearchHistory(){
         //console.log(optionTag);
         $("#search-history").append(optionTag);
     } 
+}
+
+function displayErrorMsg(countryName){
+    console.log(countryName);
+    $("#main-page-content").addClass("hidden");
+    var errorMsg = `${countryName} is not a valid country. Please enter correct Country Name`;
+    var pTag = $("<p></p>");
+    pTag.text(errorMsg);
+    $("#incorrect-country").append(pTag);  
+
 }
 
 formSubmit.addEventListener("submit", formSearch);
